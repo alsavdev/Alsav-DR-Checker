@@ -1,0 +1,70 @@
+{
+  "name": "template",
+  "productName": "template",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\"",
+    "build": "npx electron-builder build",
+    "deploy": "electron-builder -p always",
+    "bot": "node main.js"
+  },
+  "keywords": [],
+  "author": {
+    "name": "“SattyaP”",
+    "email": "stylearning7@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-updater": "^6.1.7",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "puppeteer": "^22.0.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "puppeteer-real-browser": "^1.1.7",
+    "user-agents": "^1.1.117",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.4.2",
+    "@electron-forge/maker-deb": "^6.4.2",
+    "@electron-forge/maker-rpm": "^6.4.2",
+    "@electron-forge/maker-squirrel": "^6.4.2",
+    "@electron-forge/maker-zip": "^6.4.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
+    "electron": "27.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SattyaP/template-electron"
+  },
+  "build": {
+    "appId": "Template Electron",
+    "productName": "Template Electron",
+    "compression": "maximum",
+    "copyright": "Copyrights 2024 Satya",
+    "publish": {
+      "provider": "github",
+      "owner": "SattyaP",
+      "repo": "template-electron",
+      "private": false
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
+  }
+}
