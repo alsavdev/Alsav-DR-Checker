@@ -1,6 +1,6 @@
 {
-  "name": "template",
-  "productName": "template",
+  "name": "alsav-dr-checker",
+  "productName": "Alsav DR Checker",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": "src/index.js",
@@ -11,13 +11,12 @@
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
     "build": "npx electron-builder build",
-    "deploy": "electron-builder -p always",
-    "bot": "node main.js"
+    "deploy": "electron-builder -p always"
   },
   "keywords": [],
   "author": {
-    "name": "“SattyaP”",
-    "email": "stylearning7@gmail.com"
+    "name": "Alsav System",
+    "email": "alsavdev@gmail.com"
   },
   "license": "MIT",
   "dependencies": {
@@ -44,22 +43,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SattyaP/template-electron"
+    "url": "https://github.com/SattyaP/Alsav-DR-Checker"
   },
   "build": {
-    "appId": "Template Electron",
-    "productName": "Template Electron",
+    "appId": "Alsav DR Checker",
+    "productName": "Alsav DR Checker",
     "compression": "maximum",
-    "copyright": "Copyrights 2024 Satya",
+    "copyright": "Copyrights 2024 Alsav System",
     "publish": {
       "provider": "github",
+      "private": true,
       "owner": "SattyaP",
-      "repo": "template-electron",
-      "private": false
+      "repo": "Alsav-DR-Checker"
     },
     "win": {
       "target": "nsis"
     },
+    "icon": "src/assets/logo.png",
     "nsis": {
       "oneClick": false,
       "perMachine": false,

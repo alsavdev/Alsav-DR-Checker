@@ -1,7 +1,6 @@
 const fs = require("fs");
 const puppeteer = require("puppeteer-extra");
 const stealthPlugin = require("puppeteer-extra-plugin-stealth");
-const userAgents = require("user-agents");
 puppeteer.use(stealthPlugin());
 
 async function delay(seconds) {
@@ -15,8 +14,6 @@ const proccess = async (log, proggress, logToTable, data) => {
   const { page, browser } = await puppeteerRealBrowser({
     headless: false,
   });
-
-  await page.setUserAgent(new userAgents().random().toString());
 
   try {
     await page.goto("https://ahrefs.com/website-authority-checker", {
@@ -86,7 +83,7 @@ const core = async (page, url, log, logToTable) => {
       );
     } catch (error) {
       await input.evaluate((e) => (e.value = ""))
-      await core(page,url,log,logToTable)
+      await core(page, url, log, logToTable)
     }
 
     const elBacklink = await page.waitForSelector(

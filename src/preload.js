@@ -169,6 +169,7 @@ ipcRenderer.on('app_version', (event, arg) => {
 
 ipcRenderer.on('update_available', () => {
     ipcRenderer.removeAllListeners('update_available');
+    document.getElementById('scrl').classList.add('hidden')
     message.innerText = 'A new update is available. Downloading now...';
     warp.classList.remove('hidden');
     loaderDownload.classList.remove('hidden');

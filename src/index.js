@@ -17,7 +17,7 @@ const createWindow = () => {
       color: "#fff",
       symbolColor: "#198754",
     },
-    // icon: path.join(__dirname, './assets/traffic-3.ico'),
+    icon: path.join(__dirname, './assets/logo.png'),
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
