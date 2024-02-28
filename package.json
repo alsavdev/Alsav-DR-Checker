@@ -1,7 +1,7 @@
 {
   "name": "alsav-dr-checker",
   "productName": "Alsav DR Checker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "puppeteer": "^22.0.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
-    "puppeteer-real-browser": "^1.1.7",
+    "puppeteer-real-browser": "^1.2.4",
     "user-agents": "^1.1.117",
     "xlsx": "^0.18.5"
   },
@@ -65,6 +65,9 @@
       "perMachine": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true
-    }
+    },
+    "extraFiles": [
+      "node_modules"
+    ]
   }
 }

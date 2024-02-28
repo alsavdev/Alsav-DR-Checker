@@ -10,10 +10,8 @@ async function delay(seconds) {
 let stops = false;
 
 const proccess = async (log, proggress, logToTable, data) => {
-  const { puppeteerRealBrowser } = await import("puppeteer-real-browser");
-  const { page, browser } = await puppeteerRealBrowser({
-    headless: false,
-  });
+  const { connect } = await import('puppeteer-real-browser')
+  const { page, browser } = await connect({headless: false,turnstile: true})
 
   try {
     await page.goto("https://ahrefs.com/website-authority-checker", {
@@ -22,7 +20,7 @@ const proccess = async (log, proggress, logToTable, data) => {
     });
 
     const files = fs.readFileSync(data.files, "utf-8");
-    const lines = files.split("\n").filter((line) => line !== "");
+    const lines = files.split("\n").filter((line) => line.trim() !== "");
     for (let i = 0; i < lines.length; i++) {
       if (stops) {
         log("[INFO] STOP PROCCESS");
