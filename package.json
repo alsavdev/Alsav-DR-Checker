@@ -1,7 +1,7 @@
 {
   "name": "alsav-dr-checker",
   "productName": "Alsav DR Checker",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
@@ -43,7 +43,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SattyaP/Alsav-DR-Checker"
+    "url": "https://github.com/alsavdev/Alsav-DR-Checker"
   },
   "build": {
     "appId": "Alsav DR Checker",
@@ -53,7 +53,7 @@
     "publish": {
       "provider": "github",
       "private": true,
-      "owner": "SattyaP",
+      "owner": "alsavdev",
       "repo": "Alsav-DR-Checker"
     },
     "win": {
