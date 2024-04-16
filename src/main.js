@@ -73,26 +73,27 @@ const core = async (page, url, log, logToTable) => {
 
     try {
       elDomain = await page.waitForSelector(
-        "body > div.ReactModalPortal > div > div > div.css-1ksodfu-modalWrapper.css-qf13ee-modalWrapperWithFooter > div > div.css-15bix8f-statsSection > div.css-9vtym0-domainRatingDonut > div > div:nth-child(2) > div > div.css-xj5st1 > div > div > div > span",
+        "body > div.ReactModalPortal > div > div > div.css-i7nhuu-modalWrapper.css-qf13ee-modalWrapperWithFooter > div > div.css-13rmw0d-statsSection > div.css-9vtym0-domainRatingDonut > div > div:nth-child(2) > div > div.css-xj5st1 > div > div > div > span",
         {
           waitUntil: ["networkidle2", "domcontentloaded"],
           timeout: 10000,
         }
       );
     } catch (error) {
+      console.log(error);
       await input.evaluate((e) => (e.value = ""))
       await core(page, url, log, logToTable)
     }
 
     const elBacklink = await page.waitForSelector(
-      "body > div.ReactModalPortal > div > div > div.css-1ksodfu-modalWrapper.css-qf13ee-modalWrapperWithFooter > div > div.css-15bix8f-statsSection > div.css-aa83t0-linkingWebsites > div > div > div.css-1gq2z3w > div > div > div > span",
+      "body > div.ReactModalPortal > div > div > div.css-i7nhuu-modalWrapper.css-qf13ee-modalWrapperWithFooter > div > div.css-13rmw0d-statsSection > div.css-aa83t0-linkingWebsites > div > div > div.css-1gq2z3w > div > div > div > span",
       {
         waitUntil: ["networkidle2", "domcontentloaded"],
         timeout: 120000,
       }
     );
     const elLink = await page.waitForSelector(
-      "body > div.ReactModalPortal > div > div > div.css-1ksodfu-modalWrapper.css-qf13ee-modalWrapperWithFooter > div > div.css-15bix8f-statsSection > div.css-aa83t0-linkingWebsites > div > div > div.css-1gq2z3w > div > div > div > span",
+      "body > div.ReactModalPortal > div > div > div.css-i7nhuu-modalWrapper.css-qf13ee-modalWrapperWithFooter > div > div.css-13rmw0d-statsSection > div.css-j6i87y-backlinks > div > div > div.css-1gq2z3w > div > div > div > span",
       {
         waitUntil: ["networkidle2", "domcontentloaded"],
         timeout: 120000,
@@ -108,7 +109,7 @@ const core = async (page, url, log, logToTable) => {
     };
 
     logToTable(url, data);
-
+    
     const close = await page.$$("button");
     await close[close.length - 1].click();
 

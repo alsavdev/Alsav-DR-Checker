@@ -1,11 +1,12 @@
 {
   "name": "alsav-dr-checker",
   "productName": "Alsav DR Checker",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
+    "dev" : "electron .",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
